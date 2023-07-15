@@ -10,15 +10,18 @@ public class FarmPlot : MonoBehaviour
 
     [SerializeField] private TextMeshPro text;
 
+    [SerializeField] private PlantsSO plant;
+    private bool isPlanted = false;
+
     private void Update()
     {
         if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
         {
             text.gameObject.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && !isPlanted)
             {
-                Debug.Log("Player pressed E at farm plot");
+                GetComponentInChildren<SpriteRenderer>().sprite = plant.growth[0];
             }
         }
         else
