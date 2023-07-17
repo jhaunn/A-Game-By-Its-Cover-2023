@@ -34,10 +34,10 @@ public class FarmPlot : MonoBehaviour
         {
             GrowCrop();
         }
-        else if (isGrown)
-        {
-            HarvestCrop();
-        }
+        //else if (isGrown)
+        //{
+        //    HarvestCrop();
+        //}
     }
 
     private void PlantCrop()
@@ -87,25 +87,25 @@ public class FarmPlot : MonoBehaviour
 
     private void HarvestCrop()
     {
-        if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
-        {
-            text.gameObject.SetActive(true);
-            text.text = "Harvest";
+        //if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
+        //{
+        //    text.gameObject.SetActive(true);
+        //    text.text = "Harvest";
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                GetComponentInChildren<SpriteRenderer>().sprite = tilledDirt;
+        //    if (Input.GetKeyDown(KeyCode.E))
+        //    {
+        //        GetComponentInChildren<SpriteRenderer>().sprite = tilledDirt;
 
-                isPlanted = false;
-                isGrown = false;
-                cropGrowth = 0f;
-                growthMultiplier = 0f;
-            }
-        }
-        else
-        {
-            text.gameObject.SetActive(false);
-        }
+        //        isPlanted = false;
+        //        isGrown = false;
+        //        cropGrowth = 0f;
+        //        growthMultiplier = 0f;
+        //    }
+        //}
+        //else
+        //{
+        //    text.gameObject.SetActive(false);
+        //}
     }
 
     private void OnDrawGizmosSelected()
