@@ -8,4 +8,7 @@ public class PlantsSO : ScriptableObject
     public Sprite seed;
     public Sprite[] growth = new Sprite[4];
     public Sprite yield;
+
+    public float minGrowthSpeed, maxGrowthSpeed;
+    public int minYield, maxYield;
 }

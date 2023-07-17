@@ -19,3 +19,7 @@ MonoBehaviour:
   - {fileID: -813132428, guid: 1df8fc0f02dbea64983b211bc3733c65, type: 3}
   - {fileID: -1409469495, guid: 1df8fc0f02dbea64983b211bc3733c65, type: 3}
   yield: {fileID: -1467374127, guid: 1df8fc0f02dbea64983b211bc3733c65, type: 3}
+  minGrowthSpeed: 10
+  maxGrowthSpeed: 15
+  minYield: 2
+  maxYield: 3
