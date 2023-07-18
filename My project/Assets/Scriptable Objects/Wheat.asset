@@ -22,4 +22,4 @@ MonoBehaviour:
   minGrowthSpeed: 10
   maxGrowthSpeed: 15
   minYield: 2
-  maxYield: 3
+  maxYield: 5
