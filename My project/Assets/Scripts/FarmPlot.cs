@@ -47,8 +47,10 @@ public class FarmPlot : MonoBehaviour
             text.gameObject.SetActive(true);
             text.text = "Plant";
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canPlant)
             {
+                ActionBuffer.instance.UsePlantAction();
+
                 GetComponentInChildren<SpriteRenderer>().sprite = plant.growth[0];
                 growthMultiplier = Random.Range(plant.minGrowthSpeed, plant.maxGrowthSpeed);
                 isPlanted = true;
@@ -92,8 +94,10 @@ public class FarmPlot : MonoBehaviour
             text.gameObject.SetActive(true);
             text.text = "Harvest";
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canHarvest)
             {
+                ActionBuffer.instance.UseHarvestAction();
+
                 GetComponentInChildren<SpriteRenderer>().sprite = tilledDirt;
                 ScoreManager.instance.AddResource(Random.Range(plant.minYield, plant.maxYield));
 
