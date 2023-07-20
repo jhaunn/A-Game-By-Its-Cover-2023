@@ -7,9 +7,6 @@ public class FarmAutomation : MonoBehaviour
 {
     private FarmPlot[] farmPlots;
 
-    [SerializeField] private bool automatePlant = false;
-    [SerializeField] private bool automateHarvest = false;
-
     private void Awake()
     {
         farmPlots = transform.GetComponentsInChildren<FarmPlot>();
@@ -24,12 +21,12 @@ public class FarmAutomation : MonoBehaviour
     {
         for (int i = 0; i < farmPlots.Length; i++)
         {
-            if (!farmPlots[i].GetIsPlanted() && automatePlant)
+            if (!farmPlots[i].GetIsPlanted())
             {
                 farmPlots[i].PlantCrop();
             }
 
-            if (farmPlots[i].GetIsGrown() && automateHarvest)
+            if (farmPlots[i].GetIsGrown())
             {
                 farmPlots[i].HarvestCrop();
             }

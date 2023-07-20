@@ -27,45 +27,9 @@ public class FarmPlot : MonoBehaviour
 
     private void Update()
     {
-        if (!isPlanted)
-        {
-            if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
-            {
-                text.gameObject.SetActive(true);
-                text.text = "Plant";
-
-                if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canPlant)
-                {
-                    ActionBuffer.instance.UsePlantAction();
-                    PlantCrop();
-                }
-            }
-            else
-            {
-                text.gameObject.SetActive(false);
-            }
-        }
-        else if (isPlanted && !isGrown)
+        if (isPlanted && !isGrown)
         {
             GrowCrop();
-        }
-        else if (isGrown)
-        {
-            if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
-            {
-                text.gameObject.SetActive(true);
-                text.text = "Harvest";
-
-                if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canHarvest)
-                {
-                    ActionBuffer.instance.UseHarvestAction();
-                    HarvestCrop();
-                }
-            }
-            else
-            {
-                text.gameObject.SetActive(false);
-            }
         }
     }
 
