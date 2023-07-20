@@ -7,7 +7,6 @@ public class FarmAutomation : MonoBehaviour
 {
     private FarmPlot[] farmPlots;
 
-    [SerializeField] private GameObject farmNPC;
     private TextMeshPro npcText;
     [SerializeField] private float npcInteractRadius;
     [SerializeField] private LayerMask playerLayerMask;
@@ -15,7 +14,6 @@ public class FarmAutomation : MonoBehaviour
     private void Awake()
     {
         farmPlots = transform.GetComponentsInChildren<FarmPlot>();
-        npcText = farmNPC.GetComponentInChildren<TextMeshPro>();
     }
 
     private void Update()
@@ -35,25 +33,5 @@ public class FarmAutomation : MonoBehaviour
                 }
             }
         }
-
-        if (Physics2D.OverlapCircle(farmNPC.transform.position, npcInteractRadius, playerLayerMask))
-        {
-            npcText.gameObject.SetActive(true);
-            npcText.text = "Interact";
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Interacted with NPC");
-            }
-        }
-        else
-        {
-            npcText.gameObject.SetActive(false);
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(farmNPC.transform.position, npcInteractRadius);
     }
 }
