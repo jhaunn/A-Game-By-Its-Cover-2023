@@ -1372,7 +1372,7 @@ GameObject:
   - component: {fileID: 260381444}
   - component: {fileID: 260381443}
   m_Layer: 5
-  m_Name: Plant Action
+  m_Name: Plant Action (Image)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7574,13 +7574,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantBuffer: 2
-  waterBuffer: 2
   harvestBuffer: 2
   plantSlider: {fileID: 365581617}
-  waterSlider: {fileID: 0}
   harvestSlider: {fileID: 59331357}
   canPlant: 0
-  canWater: 0
   canHarvest: 0
 --- !u!1001 &1224697303
 PrefabInstance:
@@ -8235,7 +8232,7 @@ GameObject:
   - component: {fileID: 2033691050}
   - component: {fileID: 2033691049}
   m_Layer: 5
-  m_Name: Harvest Action
+  m_Name: Harvest Action (Image)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
