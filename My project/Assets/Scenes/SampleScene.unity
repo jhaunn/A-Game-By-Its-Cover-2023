@@ -333,10 +333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9e84e1d59aad4a8d93b4b7febc49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcInteractRadius: 0.75
-  playerLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
+  automatePlant: 1
+  automateHarvest: 1
+  automateBuffer: 5
 --- !u!1 &139007908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9580,8 +9579,8 @@ Tilemap:
   - first: {x: -9, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9631,22 +9630,22 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 94d90cede30ad9c489155ace4e04ffba, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 494e3ef2ad2a718439330ef5b1b25c17, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 06188040796106b4aa9dc8f1fcffa63d, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 6b75dfde5791b4248bc443db8641f35f, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 994826659bcd07d4cac47faeb3f4a082, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 49174567, guid: af0d062e9111bff4aa9666d11efd6de8, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 1305718225, guid: af0d062e9111bff4aa9666d11efd6de8, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1768365925, guid: af0d062e9111bff4aa9666d11efd6de8, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: -417474285, guid: af0d062e9111bff4aa9666d11efd6de8, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1595436272, guid: af0d062e9111bff4aa9666d11efd6de8, type: 3}
@@ -30272,7 +30271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2976189885892194495, guid: 81f7632ba0d2293489554dd783baf776, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2976189885892194495, guid: 81f7632ba0d2293489554dd783baf776, type: 3}
       propertyPath: m_LocalPosition.x

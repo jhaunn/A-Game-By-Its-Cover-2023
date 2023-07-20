@@ -7,9 +7,8 @@ public class FarmAutomation : MonoBehaviour
 {
     private FarmPlot[] farmPlots;
 
-    private TextMeshPro npcText;
-    [SerializeField] private float npcInteractRadius;
-    [SerializeField] private LayerMask playerLayerMask;
+    [SerializeField] private bool automatePlant = false;
+    [SerializeField] private bool automateHarvest = false;
 
     private void Awake()
     {
@@ -18,19 +17,21 @@ public class FarmAutomation : MonoBehaviour
 
     private void Update()
     {
+        AutomateFarm();
+    }
+
+    private void AutomateFarm()
+    {
         for (int i = 0; i < farmPlots.Length; i++)
         {
-            if (farmPlots[i].GetIsAutomated())
+            if (!farmPlots[i].GetIsPlanted() && automatePlant)
             {
-                if (!farmPlots[i].GetIsPlanted())
-                {
-                    farmPlots[i].PlantCrop();
-                }
+                farmPlots[i].PlantCrop();
+            }
 
-                if (farmPlots[i].GetIsGrown())
-                {
-                    farmPlots[i].HarvestCrop();
-                }
+            if (farmPlots[i].GetIsGrown() && automateHarvest)
+            {
+                farmPlots[i].HarvestCrop();
             }
         }
     }
