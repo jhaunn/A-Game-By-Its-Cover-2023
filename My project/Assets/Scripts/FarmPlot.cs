@@ -19,6 +19,8 @@ public class FarmPlot : MonoBehaviour
 
     private bool isGrown = false;
 
+    private bool isAutomated = false;
+
     private void Start()
     {
         tilledDirt = GetComponentInChildren<SpriteRenderer>().sprite;
@@ -28,7 +30,20 @@ public class FarmPlot : MonoBehaviour
     {
         if (!isPlanted)
         {
-            PlantCrop();
+            if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
+            {
+                text.gameObject.SetActive(true);
+                text.text = "Plant";
+
+                if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canPlant)
+                {
+                    PlantCrop();
+                }
+            }
+            else
+            {
+                text.gameObject.SetActive(false);
+            }
         }
         else if (isPlanted && !isGrown)
         {
@@ -36,30 +51,45 @@ public class FarmPlot : MonoBehaviour
         }
         else if (isGrown)
         {
-            HarvestCrop();
+            if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
+            {
+                text.gameObject.SetActive(true);
+                text.text = "Harvest";
+
+                if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canHarvest)
+                {
+                    HarvestCrop();
+                }
+            }
+            else
+            {
+                text.gameObject.SetActive(false);
+            }
         }
     }
 
-    private void PlantCrop()
+    public bool GetIsAutomated()
     {
-        if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
-        {
-            text.gameObject.SetActive(true);
-            text.text = "Plant";
+        return isAutomated;
+    }
 
-            if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canPlant)
-            {
-                ActionBuffer.instance.UsePlantAction();
+    public bool GetIsPlanted()
+    {
+        return isPlanted;
+    }
 
-                GetComponentInChildren<SpriteRenderer>().sprite = plant.growth[0];
-                growthMultiplier = Random.Range(plant.minGrowthSpeed, plant.maxGrowthSpeed);
-                isPlanted = true;
-            }
-        }
-        else
-        {
-            text.gameObject.SetActive(false);
-        }
+    public bool GetIsGrown()
+    {
+        return isGrown;
+    }
+
+    public void PlantCrop()
+    {
+        ActionBuffer.instance.UsePlantAction();
+
+        GetComponentInChildren<SpriteRenderer>().sprite = plant.growth[0];
+        growthMultiplier = Random.Range(plant.minGrowthSpeed, plant.maxGrowthSpeed);
+        isPlanted = true;
     }
 
     private void GrowCrop()
@@ -87,30 +117,17 @@ public class FarmPlot : MonoBehaviour
         }
     }
 
-    private void HarvestCrop()
+    public void HarvestCrop()
     {
-        if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
-        {
-            text.gameObject.SetActive(true);
-            text.text = "Harvest";
+        ActionBuffer.instance.UseHarvestAction();
 
-            if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canHarvest)
-            {
-                ActionBuffer.instance.UseHarvestAction();
+        GetComponentInChildren<SpriteRenderer>().sprite = tilledDirt;
+        ScoreManager.instance.AddResource(Random.Range(plant.minYield, plant.maxYield));
 
-                GetComponentInChildren<SpriteRenderer>().sprite = tilledDirt;
-                ScoreManager.instance.AddResource(Random.Range(plant.minYield, plant.maxYield));
-
-                isPlanted = false;
-                isGrown = false;
-                cropGrowth = 0f;
-                growthMultiplier = 0f;
-            }
-        }
-        else
-        {
-            text.gameObject.SetActive(false);
-        }
+        isPlanted = false;
+        isGrown = false;
+        cropGrowth = 0f;
+        growthMultiplier = 0f;
     }
 
     private void OnDrawGizmosSelected()
