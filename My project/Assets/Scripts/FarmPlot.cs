@@ -13,8 +13,6 @@ public class FarmPlot : MonoBehaviour
     [SerializeField] private PlantsSO plant;
     private Sprite tilledDirt;
 
-    [SerializeField] private bool isUnlocked = false;
-
     private bool isPlanted = false;
 
     private float cropGrowth = 0f;
@@ -31,58 +29,42 @@ public class FarmPlot : MonoBehaviour
 
     private void Update()
     {
-        if (isUnlocked)
-        {
-            if (!isPlanted)
-            {
-                if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
-                {
-                    text.gameObject.SetActive(true);
-                    text.text = "Plant";
-
-                    if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canPlant)
-                    {
-                        PlantCrop();
-                    }
-                }
-                else
-                {
-                    text.gameObject.SetActive(false);
-                }
-            }
-            else if (isPlanted && !isGrown)
-            {
-                GrowCrop();
-            }
-            else if (isGrown)
-            {
-                if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
-                {
-                    text.gameObject.SetActive(true);
-                    text.text = "Harvest";
-
-                    if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canHarvest)
-                    {
-                        HarvestCrop();
-                    }
-                }
-                else
-                {
-                    text.gameObject.SetActive(false);
-                }
-            }
-        }
-        else
+        if (!isPlanted)
         {
             if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
             {
                 text.gameObject.SetActive(true);
-                text.text = "Unlock";
+                text.text = "Plant";
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canPlant)
                 {
-                    isUnlocked = true;
+                    PlantCrop();
                 }
+            }
+            else
+            {
+                text.gameObject.SetActive(false);
+            }
+        }
+        else if (isPlanted && !isGrown)
+        {
+            GrowCrop();
+        }
+        else if (isGrown)
+        {
+            if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
+            {
+                text.gameObject.SetActive(true);
+                text.text = "Harvest";
+
+                if (Input.GetKeyDown(KeyCode.E) && ActionBuffer.instance.canHarvest)
+                {
+                    HarvestCrop();
+                }
+            }
+            else
+            {
+                text.gameObject.SetActive(false);
             }
         }
     }
