@@ -10,7 +10,8 @@ public class FarmPlot : MonoBehaviour
 
     [SerializeField] private TextMeshPro text;
 
-    [SerializeField] private PlantsSO plant;
+    private FarmStatSO farmStat;
+    private PlantsSO plant;
     private Sprite tilledDirt;
 
     private bool isPlanted = false;
@@ -20,9 +21,15 @@ public class FarmPlot : MonoBehaviour
 
     private bool isGrown = false;
 
+    private void Awake()
+    {
+        farmStat = GetComponentInParent<FarmAutomation>().GetFarmStat();
+    }
+
     private void Start()
     {
         tilledDirt = GetComponentInChildren<SpriteRenderer>().sprite;
+        plant = farmStat.plant;
     }
 
     private void Update()
@@ -46,7 +53,7 @@ public class FarmPlot : MonoBehaviour
     public void PlantCrop()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = plant.growth[0];
-        growthMultiplier = Random.Range(plant.minGrowthSpeed, plant.maxGrowthSpeed);
+        growthMultiplier = Random.Range(farmStat.minGrowthSpeed, farmStat.maxGrowthSpeed);
         isPlanted = true;
     }
 
@@ -78,7 +85,7 @@ public class FarmPlot : MonoBehaviour
     public void HarvestCrop()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = tilledDirt;
-        ScoreManager.instance.AddResource(Random.Range(plant.minYield, plant.maxYield));
+        ScoreManager.instance.AddResource(Random.Range(farmStat.minYield, farmStat.maxYield));
 
         isPlanted = false;
         isGrown = false;

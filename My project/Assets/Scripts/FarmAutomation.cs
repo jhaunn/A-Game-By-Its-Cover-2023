@@ -5,6 +5,7 @@ using TMPro;
 
 public class FarmAutomation : MonoBehaviour
 {
+    [SerializeField] private FarmStatSO farmStat;
     private FarmPlot[] farmPlots;
 
     private void Awake()
@@ -15,6 +16,11 @@ public class FarmAutomation : MonoBehaviour
     private void Update()
     {
         AutomateFarm();
+    }
+
+    public FarmStatSO GetFarmStat()
+    {
+        return farmStat;
     }
 
     private void AutomateFarm()

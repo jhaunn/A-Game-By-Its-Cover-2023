@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9e84e1d59aad4a8d93b4b7febc49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmStat: {fileID: 11400000, guid: c2ed2df77708f5f46b8baa700b359f73, type: 2}
 --- !u!1 &139007908
 GameObject:
   m_ObjectHideFlags: 0
