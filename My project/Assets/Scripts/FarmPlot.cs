@@ -5,9 +5,6 @@ using TMPro;
 
 public class FarmPlot : MonoBehaviour
 {
-    [SerializeField] private float interactRadius = 0.25f;
-    [SerializeField] private LayerMask playerLayerMask;
-
     [SerializeField] private TextMeshPro text;
 
     private FarmStatSO farmStat;
@@ -91,10 +88,5 @@ public class FarmPlot : MonoBehaviour
         isGrown = false;
         cropGrowth = 0f;
         growthMultiplier = 0f;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, interactRadius);
     }
 }
