@@ -27,6 +27,9 @@ public class FarmPlot : MonoBehaviour
     {
         tilledDirt = GetComponentInChildren<SpriteRenderer>().sprite;
         plant = farmStat.plant;
+
+
+        text.text = "";
     }
 
     private void Update()

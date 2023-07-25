@@ -10272,7 +10272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmStat: {fileID: 11400000, guid: 3b042dd6f7548c1449a8a66f5768ef49, type: 2}
-  isAutomated: 1
+  isAutomated: 0
   npc: {fileID: 1923648743}
   npcText: {fileID: 89809999}
   interactRadius: 1
@@ -16885,7 +16885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmStat: {fileID: 11400000, guid: d136477b2e7e47343bd43e74ea808279, type: 2}
-  isAutomated: 1
+  isAutomated: 0
   npc: {fileID: 1647371773}
   npcText: {fileID: 984750329}
   interactRadius: 1
@@ -37919,7 +37919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmStat: {fileID: 11400000, guid: 81e03c7683f242d48b9d76286061319c, type: 2}
-  isAutomated: 1
+  isAutomated: 0
   npc: {fileID: 1628049100}
   npcText: {fileID: 1120627997}
   interactRadius: 1

@@ -40,8 +40,17 @@ public class FarmAutomation : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 panel.SetActive(true);
-                panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x- {farmStat.maxGrowthSpeed}x \n" +
-                    $"Yield: {farmStat.minYield} - {farmStat.maxYield}";
+
+                if (isAutomated)
+                {
+                    panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x- {farmStat.maxGrowthSpeed}x \n" +
+                        $"Yield: {farmStat.minYield} - {farmStat.maxYield}";
+                }
+                else
+                {
+                    panelText.text = "Unlock for 10000 \n Press E to confirm";
+                }
+                
             }
         }
         else
