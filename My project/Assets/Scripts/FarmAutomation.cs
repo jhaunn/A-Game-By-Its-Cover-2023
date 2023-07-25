@@ -9,12 +9,15 @@ public class FarmAutomation : MonoBehaviour
     [SerializeField] private FarmStatSO farmStat;
     private FarmPlot[] farmPlots;
 
+    [SerializeField] private bool isAutomated = false;
+
     [SerializeField] private Transform npc;
     [SerializeField] private TextMeshPro npcText;
     [SerializeField] private float interactRadius = 0.5f;
     [SerializeField] private LayerMask playerLayerMask;
 
     [SerializeField] private GameObject panel;
+    private GameObject currentFarm;
     private TextMeshProUGUI panelText;
 
     private void Awake()
@@ -25,7 +28,10 @@ public class FarmAutomation : MonoBehaviour
 
     private void Update()
     {
-        AutomateFarm();
+        if (isAutomated)
+        {
+            AutomateFarm();
+        }
 
         if (Physics2D.OverlapCircle(npc.position, interactRadius, playerLayerMask))
         {
