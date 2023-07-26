@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084f34d2245ce0e4ab693f7353b8ecba, type: 3}
   m_Name: FarmC
   m_EditorClassIdentifier: 
+  farmPrice: 500
   plant: {fileID: 11400000, guid: 8134671c84822624c8808e639c75ce5c, type: 2}
   minGrowthSpeed: 2.5
   maxGrowthSpeed: 5

@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Farm Stat", menuName = "Farm Stat")]
 public class FarmStatSO : ScriptableObject
 {
+    public int farmPrice;
+
     public PlantsSO plant;
 
     public float minGrowthSpeed, maxGrowthSpeed;

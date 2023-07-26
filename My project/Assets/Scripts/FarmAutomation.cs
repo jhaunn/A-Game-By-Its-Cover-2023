@@ -6,16 +6,20 @@ using TMPro;
 
 public class FarmAutomation : MonoBehaviour
 {
-    [SerializeField] private FarmStatSO farmStat;
     private FarmPlot[] farmPlots;
 
+    [Header("Farm Stat")]
+    [SerializeField] private FarmStatSO farmStat;
     [SerializeField] private bool isAutomated = false;
 
+
+    [Header("NPC Interaction")]
     [SerializeField] private Transform npc;
     [SerializeField] private TextMeshPro npcText;
     [SerializeField] private float interactRadius = 0.5f;
     [SerializeField] private LayerMask playerLayerMask;
 
+    [Header("UI")]
     [SerializeField] private GameObject panel;
     private GameObject currentFarm;
     private TextMeshProUGUI panelText;
@@ -39,8 +43,6 @@ public class FarmAutomation : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                panel.SetActive(true);
-
                 if (isAutomated)
                 {
                     panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x- {farmStat.maxGrowthSpeed}x \n" +
@@ -48,9 +50,18 @@ public class FarmAutomation : MonoBehaviour
                 }
                 else
                 {
-                    panelText.text = "Unlock for 10000 \n Press E to confirm";
+                    panelText.text = $"Unlock for {farmStat.farmPrice} \n Press E to confirm";
+
+                    if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf)
+                    {
+                        isAutomated = true;
+
+                        panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x- {farmStat.maxGrowthSpeed}x \n" +
+                            $"Yield: {farmStat.minYield} - {farmStat.maxYield}";
+                    }
                 }
-                
+
+                panel.SetActive(true);
             }
         }
         else
