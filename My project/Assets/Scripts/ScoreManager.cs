@@ -28,6 +28,11 @@ public class ScoreManager : MonoBehaviour
         resourceText.text = $"- {resource}";
     }
 
+    public int GetResource()
+    {
+        return resource;
+    }
+
     public void AddResource(int value)
     {
         resource += value;

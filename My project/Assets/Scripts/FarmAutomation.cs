@@ -52,7 +52,7 @@ public class FarmAutomation : MonoBehaviour
                 {
                     panelText.text = $"Unlock for {farmStat.farmPrice} \n Press E to confirm";
 
-                    if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf)
+                    if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf && ScoreManager.instance.GetResource() >= farmStat.farmPrice)
                     {
                         isAutomated = true;
 
