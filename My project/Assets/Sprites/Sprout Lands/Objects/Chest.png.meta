@@ -120,54 +120,12 @@ TextureImporter:
       name: Chest_0
       rect:
         serializedVersion: 2
-        x: 160
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e7643dfe7ff4414881fc611207ae547
-      internalID: -1181748751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_1
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2caa0509f1aa8b04e91024f715b7cc63
-      internalID: -427565246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_2
-      rect:
-        serializedVersion: 2
         x: 16
         y: 64
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,36 +138,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_3
+      name: Chest_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 63
         y: 64
-        width: 16
+        width: 18
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69c3dcb744b58bb468a6d94a41d533df
-      internalID: -562371184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,28 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e178daed8775a64aad154027ce6de69
-      internalID: 1408273231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_6
+      name: Chest_2
       rect:
         serializedVersion: 2
         x: 112
@@ -251,7 +167,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,15 +180,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_7
+      name: Chest_3
       rect:
         serializedVersion: 2
         x: 160
         y: 64
         width: 16
-        height: 16
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,15 +201,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_8
+      name: Chest_4
       rect:
         serializedVersion: 2
         x: 208
         y: 64
         width: 16
-        height: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -306,120 +222,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_9
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 134df1c2956f8a747b09035bb2bf58bf
-      internalID: -1392243668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c07178bfa3c68464e843dcff372f653d
-      internalID: -923889901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_11
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ab0d2dff9d3a3146bba3155851e348f
-      internalID: 639746903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_12
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a0bbbecd8d83d743beb9fce9a0b7f22
-      internalID: -1412583027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_13
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60fa8465115196c43be8cb49c52b4293
-      internalID: -605738180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_14
+      name: Chest_5
       rect:
         serializedVersion: 2
         x: 16
         y: 16
-        width: 16
-        height: 16
+        width: 11
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -432,36 +243,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_15
+      name: Chest_6
       rect:
         serializedVersion: 2
-        x: 48
+        x: 63
         y: 16
-        width: 16
-        height: 16
+        width: 13
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81e7d4171de1e85439a185f9485a8894
-      internalID: 490780298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_16
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -474,15 +264,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_17
+      name: Chest_7
       rect:
         serializedVersion: 2
         x: 112
         y: 16
         width: 16
-        height: 16
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -495,15 +285,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_18
+      name: Chest_8
       rect:
         serializedVersion: 2
         x: 160
         y: 16
         width: 16
-        height: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -516,15 +306,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_19
+      name: Chest_9
       rect:
         serializedVersion: 2
         x: 208
         y: 16
         width: 16
-        height: 16
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -547,26 +337,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chest_3: -562371184
-      Chest_0: -1181748751
-      Chest_6: -1445508061
+      Chest_3: 815601181
+      Chest_0: 1350220123
       Chest_11: 639746903
       Chest_12: -1412583027
       Chest_13: -605738180
-      Chest_18: -2022385782
-      Chest_5: 1408273231
-      Chest_2: 1350220123
-      Chest_8: -101295903
-      Chest_19: 84967650
-      Chest_4: -1329871425
+      Chest_6: 1131355683
+      Chest_5: 1524703565
+      Chest_2: -1445508061
+      Chest_8: -2022385782
+      Chest_4: -101295903
       Chest_15: 490780298
-      Chest_7: 815601181
-      Chest_9: -1392243668
-      Chest_1: -427565246
-      Chest_17: -140925658
-      Chest_16: 1131355683
+      Chest_7: -140925658
+      Chest_9: 84967650
+      Chest_1: -1329871425
       Chest_10: -923889901
-      Chest_14: 1524703565
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

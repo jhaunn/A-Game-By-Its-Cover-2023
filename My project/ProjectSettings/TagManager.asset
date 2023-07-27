@@ -50,6 +50,9 @@ TagManager:
   - name: House
     uniqueID: 1488056441
     locked: 0
+  - name: Decoration
+    uniqueID: 3723826283
+    locked: 0
   - name: Player
     uniqueID: 3838464929
     locked: 0
