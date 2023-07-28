@@ -55,6 +55,8 @@ public class FarmPlot : MonoBehaviour
         GetComponentInChildren<SpriteRenderer>().sprite = plant.growth[0];
         growthMultiplier = Random.Range(farmStat.minGrowthSpeed, farmStat.maxGrowthSpeed);
         isPlanted = true;
+
+        Instantiate(EffectsManager.instance.particles[0], transform.position, EffectsManager.instance.particles[0].transform.rotation);
     }
 
     private void GrowCrop()
@@ -91,5 +93,7 @@ public class FarmPlot : MonoBehaviour
         isGrown = false;
         cropGrowth = 0f;
         growthMultiplier = 0f;
+
+        Instantiate(EffectsManager.instance.particles[1], transform.position, EffectsManager.instance.particles[1].transform.rotation);
     }
 }

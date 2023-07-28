@@ -45,7 +45,7 @@ public class FarmAutomation : MonoBehaviour
             {
                 if (isAutomated)
                 {
-                    panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x- {farmStat.maxGrowthSpeed}x \n" +
+                    panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x - {farmStat.maxGrowthSpeed}x \n" +
                         $"Yield: {farmStat.minYield} - {farmStat.maxYield}";
                 }
                 else
@@ -56,7 +56,7 @@ public class FarmAutomation : MonoBehaviour
                     {
                         isAutomated = true;
 
-                        panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x- {farmStat.maxGrowthSpeed}x \n" +
+                        panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x - {farmStat.maxGrowthSpeed}x \n" +
                             $"Yield: {farmStat.minYield} - {farmStat.maxYield}";
                     }
                 }
