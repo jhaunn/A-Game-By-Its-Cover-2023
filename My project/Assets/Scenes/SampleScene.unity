@@ -34020,6 +34020,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84244db8902ffd14dab11d5c55c0b0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxFerality: 50
+  feralityMultiplier: 1
+  interactRadius: 1.75
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  slider: {fileID: 2130494581}
+  text: {fileID: 2093836085}
 --- !u!1001 &1212207109
 PrefabInstance:
   m_ObjectHideFlags: 0
