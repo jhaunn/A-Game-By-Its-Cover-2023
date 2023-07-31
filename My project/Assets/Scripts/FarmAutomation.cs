@@ -55,11 +55,7 @@ public class FarmAutomation : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf && ScoreManager.instance.GetResource() >= farmStat.farmPrice)
                     {
-                        isAutomated = true;
-
-                        panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x - {farmStat.maxGrowthSpeed}x \n" +
-                            $"Yield: {farmStat.minYield} - {farmStat.maxYield} \n\n" +
-                            $"Upgrade for 1000000 \n Press E to Confirm";
+                        UnlockFarm();
                     }
                 }
 
@@ -76,6 +72,15 @@ public class FarmAutomation : MonoBehaviour
     public FarmStatSO GetFarmStat()
     {
         return farmStat;
+    }
+
+    private void UnlockFarm()
+    {
+        isAutomated = true;
+
+        panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x - {farmStat.maxGrowthSpeed}x \n" +
+            $"Yield: {farmStat.minYield} - {farmStat.maxYield} \n\n" +
+            $"Upgrade for 100000 \n Press E to Confirm";
     }
 
     private void AutomateFarm()
