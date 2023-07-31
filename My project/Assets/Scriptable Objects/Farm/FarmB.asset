@@ -18,3 +18,14 @@ MonoBehaviour:
   maxGrowthSpeed: 5
   minYield: 1
   maxYield: 3
+  upgradePrice: 2c010000f4010000bc020000
+  upgradeMinGrowthSpeed:
+  - 5
+  - 7.5
+  - 10
+  upgradeMaxGrowthSpeed:
+  - 7.5
+  - 10
+  - 12.5
+  upgradeMinYield: 020000000300000004000000
+  upgradeMaxYield: 050000000600000007000000
