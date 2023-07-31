@@ -11,6 +11,7 @@ public class FarmAutomation : MonoBehaviour
     [Header("Farm Stat")]
     [SerializeField] private FarmStatSO farmStat;
     [SerializeField] private bool isAutomated = false;
+    [SerializeField] private int currentUpgrade = 0;
 
 
     [Header("NPC Interaction")]
@@ -21,7 +22,6 @@ public class FarmAutomation : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject panel;
-    private GameObject currentFarm;
     private TextMeshProUGUI panelText;
 
     private void Awake()
@@ -41,26 +41,41 @@ public class FarmAutomation : MonoBehaviour
         {
             npcText.gameObject.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (isAutomated)
             {
-                if (isAutomated)
+                if (currentUpgrade == 0)
                 {
                     panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x - {farmStat.maxGrowthSpeed}x \n" +
                         $"Yield: {farmStat.minYield} - {farmStat.maxYield} \n\n" +
-                        $"Upgrade for 1000000 \n Press E to Confirm";
+                        $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Confirm";
                 }
-                else
+                else if (currentUpgrade > 0)
                 {
-                    panelText.text = $"Unlock for {farmStat.farmPrice} \n Press E to confirm";
-
-                    if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf && ScoreManager.instance.GetResource() >= farmStat.farmPrice)
-                    {
-                        UnlockFarm();
-                    }
+                    panelText.text = $"Farm Stats \n Growth: {farmStat.upgradeMinGrowthSpeed[currentUpgrade - 1]}x - " +
+                        $"{farmStat.upgradeMaxGrowthSpeed[currentUpgrade - 1]}x \n" +
+                        $"Yield: {farmStat.upgradeMinYield[currentUpgrade - 1]} - {farmStat.upgradeMaxYield[currentUpgrade - 1]} \n\n" +
+                        $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Confirm";
                 }
 
-                panel.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E) && ScoreManager.instance.GetResource() >= farmStat.upgradePrice[currentUpgrade] && 
+                    currentUpgrade < farmStat.upgradePrice.Length)
+                {
+                    ScoreManager.instance.RemoveResource(farmStat.upgradePrice[currentUpgrade]);
+                    currentUpgrade++;
+                }
             }
+
+            else
+            {
+                panelText.text = $"Unlock for {farmStat.farmPrice} \n Press E to confirm";
+
+                if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf && ScoreManager.instance.GetResource() >= farmStat.farmPrice)
+                {
+                    UnlockFarm();
+                }
+            }
+
+            panel.SetActive(true);
         }
         else
         {
@@ -74,13 +89,15 @@ public class FarmAutomation : MonoBehaviour
         return farmStat;
     }
 
+    public int GetCurrentUpgrade()
+    {
+        return currentUpgrade;
+    }
+
     private void UnlockFarm()
     {
         isAutomated = true;
-
-        panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x - {farmStat.maxGrowthSpeed}x \n" +
-            $"Yield: {farmStat.minYield} - {farmStat.maxYield} \n\n" +
-            $"Upgrade for 100000 \n Press E to Confirm";
+        ScoreManager.instance.RemoveResource(farmStat.farmPrice);
     }
 
     private void AutomateFarm()

@@ -53,7 +53,18 @@ public class FarmPlot : MonoBehaviour
     public void PlantCrop()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = plant.growth[0];
-        growthMultiplier = Random.Range(farmStat.minGrowthSpeed, farmStat.maxGrowthSpeed);
+
+        int currentUpgrade = GetComponentInParent<FarmAutomation>().GetCurrentUpgrade();
+
+        if (currentUpgrade == 0)
+        {
+            growthMultiplier = Random.Range(farmStat.minGrowthSpeed, farmStat.maxGrowthSpeed);
+        }
+        else if (currentUpgrade > 0)
+        {
+            growthMultiplier = Random.Range(farmStat.upgradeMinGrowthSpeed[currentUpgrade - 1], farmStat.upgradeMaxGrowthSpeed[currentUpgrade - 1]);
+        }
+
         isPlanted = true;
 
         Instantiate(EffectsManager.instance.particles[0], transform.position, EffectsManager.instance.particles[0].transform.rotation);
@@ -87,7 +98,17 @@ public class FarmPlot : MonoBehaviour
     public void HarvestCrop()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = tilledDirt;
-        ScoreManager.instance.AddResource(Random.Range(farmStat.minYield, farmStat.maxYield));
+
+        int currentUpgrade = GetComponentInParent<FarmAutomation>().GetCurrentUpgrade();
+
+        if (currentUpgrade == 0)
+        {
+            ScoreManager.instance.AddResource(Random.Range(farmStat.minYield, farmStat.maxYield));
+        }
+        else if (currentUpgrade > 0)
+        {
+            ScoreManager.instance.AddResource(Random.Range(farmStat.upgradeMinYield[currentUpgrade - 1], farmStat.upgradeMaxYield[currentUpgrade - 1]));
+        }
 
         isPlanted = false;
         isGrown = false;
