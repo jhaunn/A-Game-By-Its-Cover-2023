@@ -36978,7 +36978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84244db8902ffd14dab11d5c55c0b0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFerality: 50
+  maxFerality: 80
   feralityMultiplier: 1
   interactRadius: 1.75
   playerLayerMask:
