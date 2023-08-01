@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmStat: {fileID: 11400000, guid: c2ed2df77708f5f46b8baa700b359f73, type: 2}
-  isAutomated: 0
+  isAutomated: 1
   currentUpgrade: 0
   npc: {fileID: 691462240}
   npcText: {fileID: 312930928}
