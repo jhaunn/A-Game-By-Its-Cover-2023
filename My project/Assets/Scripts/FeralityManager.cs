@@ -57,22 +57,26 @@ public class FeralityManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (ScoreManager.instance.GetResource() >= requiredFeed)
-                {
-                    slider.value = slider.maxValue;
-                    ScoreManager.instance.RemoveResource(requiredFeed);
-                }
-                else
-                {
-                    slider.value += ScoreManager.instance.GetResource();
-                    ScoreManager.instance.RemoveResource(ScoreManager.instance.GetResource());
-                }
-                
+                ReplenishFerality();
             }
         }
         else
         {
             text.gameObject.SetActive(false);
+        }
+    }
+
+    private void ReplenishFerality()
+    {
+        if (ScoreManager.instance.GetResource() >= requiredFeed)
+        {
+            slider.value = slider.maxValue;
+            ScoreManager.instance.RemoveResource(requiredFeed);
+        }
+        else
+        {
+            slider.value += ScoreManager.instance.GetResource();
+            ScoreManager.instance.RemoveResource(ScoreManager.instance.GetResource());
         }
     }
 
