@@ -19,4 +19,17 @@ public class SoundManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+    public AudioSource SetupAudio(GameObject source)
+    {
+        AudioSource soundFx;
+
+        soundFx = source.AddComponent<AudioSource>();
+
+        soundFx.volume = 0.65f;
+        soundFx.spatialBlend = 1f;
+        soundFx.maxDistance = 10f;
+
+        return soundFx;
+    }
 }

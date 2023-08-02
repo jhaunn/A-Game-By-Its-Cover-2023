@@ -35,17 +35,13 @@ public class FeralityManager : MonoBehaviour
             Destroy(this);
         }
 
-        soundFx = gameObject.AddComponent<AudioSource>();
+        soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 
     private void Start()
     {
         slider.maxValue = maxFerality;
         slider.value = slider.maxValue;
-
-        soundFx.volume = 0.1f;
-        soundFx.spatialBlend = 1.0f;
-        soundFx.maxDistance = 10f;
     }
 
     private void Update()
@@ -76,18 +72,26 @@ public class FeralityManager : MonoBehaviour
 
     private void ReplenishFerality()
     {
-        if (ScoreManager.instance.GetResource() >= requiredFeed)
+        if (ScoreManager.instance.GetResource() > 0)
         {
-            slider.value = slider.maxValue;
-            ScoreManager.instance.RemoveResource(requiredFeed);
+            if (ScoreManager.instance.GetResource() >= requiredFeed)
+            {
+                slider.value = slider.maxValue;
+                ScoreManager.instance.RemoveResource(requiredFeed);
+            }
+            else
+            {
+                slider.value += ScoreManager.instance.GetResource();
+                ScoreManager.instance.RemoveResource(ScoreManager.instance.GetResource());
+            }
+
+            soundFx.PlayOneShot(SoundManager.instance.sounds[4]);
+            Instantiate(EffectsManager.instance.particles[2], transform.position, EffectsManager.instance.particles[2].transform.rotation);
         }
         else
         {
-            slider.value += ScoreManager.instance.GetResource();
-            ScoreManager.instance.RemoveResource(ScoreManager.instance.GetResource());
+            soundFx.PlayOneShot(SoundManager.instance.sounds[3]);
         }
-
-        soundFx.PlayOneShot(SoundManager.instance.sounds[4]);
     }
 
     private void OnDrawGizmosSelected()

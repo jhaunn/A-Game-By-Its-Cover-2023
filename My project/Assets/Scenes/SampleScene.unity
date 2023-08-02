@@ -40107,6 +40107,7 @@ MonoBehaviour:
   particles:
   - {fileID: 7273298569924062566, guid: 6a82c855025fbad408b54af308731810, type: 3}
   - {fileID: 2366322109776597073, guid: b03913cdf6004354692335bbaa5f81f9, type: 3}
+  - {fileID: 8511807257400920591, guid: 335a8db6fe2fe664092498ddcf43d763, type: 3}
 --- !u!1001 &1519916531
 PrefabInstance:
   m_ObjectHideFlags: 0

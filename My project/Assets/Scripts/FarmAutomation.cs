@@ -31,14 +31,7 @@ public class FarmAutomation : MonoBehaviour
         farmPlots = transform.GetComponentsInChildren<FarmPlot>();
         panelText = panel.transform.GetComponentInChildren<TextMeshProUGUI>();
 
-        soundFx = gameObject.AddComponent<AudioSource>();
-    }
-
-    private void Start()
-    {
-        soundFx.volume = 0.1f;
-        soundFx.spatialBlend = 1.0f;
-        soundFx.maxDistance = 10f;
+        soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 
     private void Update()
