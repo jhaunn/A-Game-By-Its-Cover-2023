@@ -18,9 +18,13 @@ public class FarmPlot : MonoBehaviour
 
     private bool isGrown = false;
 
+    private AudioSource soundFx;
+
     private void Awake()
     {
         farmStat = GetComponentInParent<FarmAutomation>().GetFarmStat();
+
+        soundFx = gameObject.AddComponent<AudioSource>();
     }
 
     private void Start()
@@ -30,6 +34,10 @@ public class FarmPlot : MonoBehaviour
 
 
         text.text = "";
+
+        soundFx.volume = 0.1f;
+        soundFx.spatialBlend = 1.0f;
+        soundFx.maxDistance = 10f;
     }
 
     private void Update()
@@ -68,6 +76,8 @@ public class FarmPlot : MonoBehaviour
         isPlanted = true;
 
         Instantiate(EffectsManager.instance.particles[0], transform.position, EffectsManager.instance.particles[0].transform.rotation);
+
+        soundFx.PlayOneShot(SoundManager.instance.sounds[1]);
     }
 
     private void GrowCrop()
@@ -116,5 +126,8 @@ public class FarmPlot : MonoBehaviour
         growthMultiplier = 0f;
 
         Instantiate(EffectsManager.instance.particles[1], transform.position, EffectsManager.instance.particles[1].transform.rotation);
+
+        soundFx.PlayOneShot(SoundManager.instance.sounds[0]);
+
     }
 }
