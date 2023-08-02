@@ -24,10 +24,21 @@ public class FarmAutomation : MonoBehaviour
     [SerializeField] private GameObject panel;
     private TextMeshProUGUI panelText;
 
+    private AudioSource soundFx;
+
     private void Awake()
     {
         farmPlots = transform.GetComponentsInChildren<FarmPlot>();
         panelText = panel.transform.GetComponentInChildren<TextMeshProUGUI>();
+
+        soundFx = gameObject.AddComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        soundFx.volume = 0.1f;
+        soundFx.spatialBlend = 1.0f;
+        soundFx.maxDistance = 10f;
     }
 
     private void Update()
@@ -44,19 +55,36 @@ public class FarmAutomation : MonoBehaviour
 
             if (isAutomated)
             {
-                if (Input.GetKeyDown(KeyCode.E) && ScoreManager.instance.GetResource() >= farmStat.upgradePrice[currentUpgrade] && 
-                    currentUpgrade < farmStat.upgradePrice.Length)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    UpgradeFarm();
+                    if (ScoreManager.instance.GetResource() >= farmStat.upgradePrice[currentUpgrade] && currentUpgrade < farmStat.upgradePrice.Length)
+                    {
+                        UpgradeFarm();
+                        soundFx.PlayOneShot(SoundManager.instance.sounds[2]);
+                    }
+                    else
+                    {
+                        soundFx.PlayOneShot(SoundManager.instance.sounds[3]);
+                    }
                 }
+                
             }
 
             else
             {
-                if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf && ScoreManager.instance.GetResource() >= farmStat.farmPrice)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    UnlockFarm();
+                    if (panel.activeSelf && ScoreManager.instance.GetResource() >= farmStat.farmPrice)
+                    {
+                        UnlockFarm();
+                        soundFx.PlayOneShot(SoundManager.instance.sounds[2]);
+                    }
+                    else
+                    {
+                        soundFx.PlayOneShot(SoundManager.instance.sounds[3]);
+                    }
                 }
+                
             }
 
             panel.SetActive(true);

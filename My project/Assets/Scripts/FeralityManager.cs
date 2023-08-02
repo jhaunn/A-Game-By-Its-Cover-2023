@@ -22,6 +22,8 @@ public class FeralityManager : MonoBehaviour
 
     private int requiredFeed;
 
+    private AudioSource soundFx;
+
     private void Awake()
     {
         if (instance == null)
@@ -32,12 +34,18 @@ public class FeralityManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        soundFx = gameObject.AddComponent<AudioSource>();
     }
 
     private void Start()
     {
         slider.maxValue = maxFerality;
         slider.value = slider.maxValue;
+
+        soundFx.volume = 0.1f;
+        soundFx.spatialBlend = 1.0f;
+        soundFx.maxDistance = 10f;
     }
 
     private void Update()
@@ -78,6 +86,8 @@ public class FeralityManager : MonoBehaviour
             slider.value += ScoreManager.instance.GetResource();
             ScoreManager.instance.RemoveResource(ScoreManager.instance.GetResource());
         }
+
+        soundFx.PlayOneShot(SoundManager.instance.sounds[4]);
     }
 
     private void OnDrawGizmosSelected()
