@@ -86,20 +86,20 @@ public class FarmAutomation : MonoBehaviour
             {
                 panelText.text = $"Farm Stats \n Growth: {farmStat.minGrowthSpeed}x - {farmStat.maxGrowthSpeed}x \n" +
                     $"Yield: {farmStat.minYield} - {farmStat.maxYield} \n\n" +
-                    $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Confirm";
+                    $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Upgrade";
             }
             else if (currentUpgrade > 0)
             {
                 panelText.text = $"Farm Stats \n Growth: {farmStat.upgradeMinGrowthSpeed[currentUpgrade - 1]}x - " +
                     $"{farmStat.upgradeMaxGrowthSpeed[currentUpgrade - 1]}x \n" +
                     $"Yield: {farmStat.upgradeMinYield[currentUpgrade - 1]} - {farmStat.upgradeMaxYield[currentUpgrade - 1]} \n\n" +
-                    $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Confirm";
+                    $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Upgrade";
             }
         }
 
         else
         {
-            panelText.text = $"Unlock for {farmStat.farmPrice} \n Press E to confirm";
+            panelText.text = $"Unlock for {farmStat.farmPrice} \n Press E to Unlock";
         }
     }
 
