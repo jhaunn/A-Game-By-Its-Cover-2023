@@ -22,9 +22,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource SetupAudio(GameObject source)
     {
-        AudioSource soundFx;
-
-        soundFx = source.AddComponent<AudioSource>();
+        AudioSource soundFx = source.AddComponent<AudioSource>();
 
         soundFx.volume = 0.65f;
         soundFx.spatialBlend = 1f;

@@ -23,8 +23,6 @@ public class FarmPlot : MonoBehaviour
     private void Awake()
     {
         farmStat = GetComponentInParent<FarmAutomation>().GetFarmStat();
-
-        soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 
     private void Start()
@@ -34,6 +32,8 @@ public class FarmPlot : MonoBehaviour
 
 
         text.text = "";
+
+        soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 
     private void Update()

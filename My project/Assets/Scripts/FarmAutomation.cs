@@ -30,7 +30,10 @@ public class FarmAutomation : MonoBehaviour
     {
         farmPlots = transform.GetComponentsInChildren<FarmPlot>();
         panelText = panel.transform.GetComponentInChildren<TextMeshProUGUI>();
+    }
 
+    private void Start()
+    {
         soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 

@@ -34,14 +34,14 @@ public class FeralityManager : MonoBehaviour
         {
             Destroy(this);
         }
-
-        soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 
     private void Start()
     {
         slider.maxValue = maxFerality;
         slider.value = slider.maxValue;
+
+        soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 
     private void Update()
