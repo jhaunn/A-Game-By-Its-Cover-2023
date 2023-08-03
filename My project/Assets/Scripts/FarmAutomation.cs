@@ -11,14 +11,14 @@ public class FarmAutomation : MonoBehaviour
     [Header("Farm Stat")]
     [SerializeField] private FarmStatSO farmStat;
     [SerializeField] private bool isAutomated = false;
-    [SerializeField] private int currentUpgrade = 0;
+    private int currentUpgrade = 0;
 
 
     [Header("NPC Interaction")]
     [SerializeField] private Transform npc;
     [SerializeField] private TextMeshPro npcText;
-    [SerializeField] private float interactRadius = 0.5f;
-    [SerializeField] private LayerMask playerLayerMask;
+    private float interactRadius = 1f;
+    private LayerMask playerLayerMask;
 
     [Header("UI")]
     [SerializeField] private GameObject panel;
@@ -34,6 +34,8 @@ public class FarmAutomation : MonoBehaviour
 
     private void Start()
     {
+        playerLayerMask = LayerMask.GetMask("Player");
+
         soundFx = SoundManager.instance.SetupAudio(gameObject);
     }
 
