@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6638636}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1910736542}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6638636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,10 +931,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 389225578}
-  - component: {fileID: 389225577}
   - component: {fileID: 389225576}
   m_Layer: 0
-  m_Name: Sound Manager
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1024,24 +1035,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &389225577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389225575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f39e7899608db4197b0b7f691e72ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 8300000, guid: 775a7d2ebbb9920429058d89e9ec2fea, type: 3}
-  - {fileID: 8300000, guid: 4e5d17541f806164b8bb51b27849a48d, type: 3}
-  - {fileID: 8300000, guid: f4cd6dc5ae572a24fb50904f02aebba1, type: 3}
-  - {fileID: 8300000, guid: a0be2679f6084f449a4abb4f179873e5, type: 3}
-  - {fileID: 8300000, guid: 96016a319002c304f9d0ad116fb31daa, type: 3}
 --- !u!4 &389225578
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,7 +1133,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 653521548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1910736542}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &653521548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7115,6 +7120,7 @@ GameObject:
   - component: {fileID: 1910736540}
   - component: {fileID: 1910736539}
   - component: {fileID: 1910736538}
+  - component: {fileID: 1910736542}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7205,3 +7211,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1910736542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910736537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a315423acc1e7c46b26338ec58f6ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
