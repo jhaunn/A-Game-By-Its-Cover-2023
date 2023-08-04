@@ -4825,8 +4825,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xBound: 17
   yBound: 2
-  spawnTimerMin: 15
-  spawnTimerMax: 30
+  spawnTimerMin: 10
+  spawnTimerMax: 20
   npc: {fileID: 3212331732424399862, guid: b598649c41abf2b4e9f6358f3bb6e5f4, type: 3}
 --- !u!4 &359868828
 Transform:
