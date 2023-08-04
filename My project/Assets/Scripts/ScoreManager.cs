@@ -35,7 +35,10 @@ public class ScoreManager : MonoBehaviour
 
     public void AddResource(int value)
     {
-        resource += value;
+        if (!GameMenu.instance.GetIsGameOver())
+        {
+            resource += value;
+        }
     }
 
     public void RemoveResource(int value)

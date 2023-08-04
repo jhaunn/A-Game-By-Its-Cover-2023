@@ -13,8 +13,10 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header("Game Over")]
-    [SerializeField] private GameObject gameOver;
-    [SerializeField] private Transform feralityNpc;
+    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private AudioClip gameOverMusic;
+    [SerializeField] private GameObject gameOverParticles;
+    private bool isGameOver = false;
 
     private void Awake()
     {
@@ -41,6 +43,11 @@ public class GameMenu : MonoBehaviour
         }
     }
 
+    public bool GetIsGameOver()
+    {
+        return isGameOver;
+    }
+
     public void GameResume()
     {
         menu.SetActive(false);
@@ -59,16 +66,21 @@ public class GameMenu : MonoBehaviour
 
     public void GameOver()
     {
-        menu.SetActive(false);
-        tutorial.SetActive(false);
-
-        if (GameObject.FindGameObjectWithTag("Player"))
+        if (!isGameOver)
         {
-            GameObject.FindGameObjectWithTag("Player").SetActive(false);
-        }
+            menu.SetActive(false);
+            tutorial.SetActive(false);
 
-        GameObject.FindObjectOfType<CinemachineVirtualCamera>().Follow = feralityNpc;
-        gameOver.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").SetActive(false);
+
+            SoundManager.instance.GetComponent<AudioSource>().clip = gameOverMusic;
+            SoundManager.instance.GetComponent<AudioSource>().Play();
+            Instantiate(gameOverParticles, gameOverParticles.transform.position, gameOverParticles.transform.rotation);
+            gameOverMenu.SetActive(true);
+
+            isGameOver = true;
+        }
+        
     }
 
     public void GameOverRetry()

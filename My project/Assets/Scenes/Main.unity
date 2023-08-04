@@ -34328,8 +34328,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 135679344}
   tutorial: {fileID: 1772592758}
-  gameOver: {fileID: 490576929}
-  feralityNpc: {fileID: 1175475661}
+  gameOverMenu: {fileID: 490576929}
+  gameOverMusic: {fileID: 8300000, guid: eb78da0184e533540b3b2ccfc3189e8c, type: 3}
+  gameOverParticles: {fileID: 6330822552759441743, guid: 6fb283d54dfbdc34cb50feb2ddf50219, type: 3}
 --- !u!4 &650472059
 Transform:
   m_ObjectHideFlags: 0
@@ -35051,7 +35052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84244db8902ffd14dab11d5c55c0b0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFerality: 5
+  maxFerality: 75
   feralityMultiplier: 1
   interactRadius: 1.75
   playerLayerMask:
@@ -39056,7 +39057,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 2073249335
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &1991632027
 RectTransform:
