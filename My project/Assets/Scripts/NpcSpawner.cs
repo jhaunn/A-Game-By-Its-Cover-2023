@@ -6,14 +6,14 @@ public class NpcSpawner : MonoBehaviour
 {
     [SerializeField] private float xBound;
     [SerializeField] private float yBound;
-    [SerializeField] private float spawnTimer;
+    [SerializeField] private float spawnTimerMin, spawnTimerMax;
     private float currentSpawnTimer;
 
     [SerializeField] private GameObject npc;
 
     private void Start()
     {
-        currentSpawnTimer = spawnTimer;
+        currentSpawnTimer = Random.Range(spawnTimerMin, spawnTimerMax);
     }
 
     private void Update()
@@ -26,7 +26,7 @@ public class NpcSpawner : MonoBehaviour
 
             Instantiate(npc, spawnPos + transform.position, npc.transform.rotation);
 
-            currentSpawnTimer = spawnTimer;
+            currentSpawnTimer = Random.Range(spawnTimerMin, spawnTimerMax);
         }
     }
 

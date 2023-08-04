@@ -4825,8 +4825,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xBound: 17
   yBound: 2
-  spawnTimer: 3
-  npc: {fileID: 5571215951443058311, guid: a7707b817c3a4df4a9d593d66af53c1b, type: 3}
+  spawnTimerMin: 15
+  spawnTimerMax: 30
+  npc: {fileID: 3212331732424399862, guid: b598649c41abf2b4e9f6358f3bb6e5f4, type: 3}
 --- !u!4 &359868828
 Transform:
   m_ObjectHideFlags: 0
@@ -37414,7 +37415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5571215951443058360, guid: a7707b817c3a4df4a9d593d66af53c1b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5571215951443058360, guid: a7707b817c3a4df4a9d593d66af53c1b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39345,6 +39346,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f4cd6dc5ae572a24fb50904f02aebba1, type: 3}
   - {fileID: 8300000, guid: a0be2679f6084f449a4abb4f179873e5, type: 3}
   - {fileID: 8300000, guid: 96016a319002c304f9d0ad116fb31daa, type: 3}
+  - {fileID: 8300000, guid: 69465c64ae477b745a57dee5de4a8d27, type: 3}
 --- !u!4 &2020105545
 Transform:
   m_ObjectHideFlags: 0
