@@ -557,7 +557,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 650472058}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: GameOverRetry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34328,6 +34328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 135679344}
   tutorial: {fileID: 1772592758}
+  gameOver: {fileID: 490576929}
+  feralityNpc: {fileID: 1175475661}
 --- !u!4 &650472059
 Transform:
   m_ObjectHideFlags: 0
@@ -35049,7 +35051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84244db8902ffd14dab11d5c55c0b0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFerality: 80
+  maxFerality: 5
   feralityMultiplier: 1
   interactRadius: 1.75
   playerLayerMask:
@@ -38701,7 +38703,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 650472058}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

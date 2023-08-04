@@ -68,6 +68,11 @@ public class FeralityManager : MonoBehaviour
         {
             text.gameObject.SetActive(false);
         }
+
+        if (slider.value <= 0f)
+        {
+            GameMenu.instance.GameOver();
+        }
     }
 
     private void ReplenishFerality()
