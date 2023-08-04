@@ -7,6 +7,11 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject tutorial;
 
+    private void Start()
+    {
+        tutorial.SetActive(true);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -17,6 +22,12 @@ public class GameMenu : MonoBehaviour
 
     public void GameResume()
     {
+        menu.SetActive(false);
+    }
+
+    public void Tutorial()
+    {
+        tutorial.SetActive(true);
         menu.SetActive(false);
     }
 
