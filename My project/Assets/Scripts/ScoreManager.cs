@@ -38,6 +38,7 @@ public class ScoreManager : MonoBehaviour
         if (!GameMenu.instance.GetIsGameOver())
         {
             resource += value;
+            resourceText.gameObject.GetComponentInParent<Animator>().Play("Pulse");
         }
     }
 

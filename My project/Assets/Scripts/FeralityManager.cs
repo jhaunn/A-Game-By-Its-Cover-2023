@@ -91,7 +91,9 @@ public class FeralityManager : MonoBehaviour
             }
 
             soundFx.PlayOneShot(SoundManager.instance.sounds[4]);
+
             Instantiate(EffectsManager.instance.particles[2], transform.position, EffectsManager.instance.particles[2].transform.rotation);
+            slider.gameObject.GetComponentInParent<Animator>().Play("Pulse");
         }
         else
         {
