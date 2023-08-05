@@ -53,9 +53,9 @@ public class FarmAutomation : MonoBehaviour
 
             if (isAutomated)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && currentUpgrade < farmStat.upgradePrice.Length)
                 {
-                    if (ScoreManager.instance.GetResource() >= farmStat.upgradePrice[currentUpgrade] && currentUpgrade < farmStat.upgradePrice.Length)
+                    if (ScoreManager.instance.GetResource() >= farmStat.upgradePrice[currentUpgrade])
                     {
                         UpgradeFarm();
                         soundFx.PlayOneShot(SoundManager.instance.sounds[2]);
@@ -114,12 +114,19 @@ public class FarmAutomation : MonoBehaviour
                     $"Yield: {farmStat.minYield} - {farmStat.maxYield} \n\n" +
                     $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Upgrade";
             }
-            else if (currentUpgrade > 0)
+            else if (currentUpgrade > 0 && currentUpgrade < farmStat.upgradePrice.Length)
             {
                 panelText.text = $"Farm Stats \n Growth: {farmStat.upgradeMinGrowthSpeed[currentUpgrade - 1]}x - " +
                     $"{farmStat.upgradeMaxGrowthSpeed[currentUpgrade - 1]}x \n" +
                     $"Yield: {farmStat.upgradeMinYield[currentUpgrade - 1]} - {farmStat.upgradeMaxYield[currentUpgrade - 1]} \n\n" +
                     $"Upgrade for {farmStat.upgradePrice[currentUpgrade]} \n Press E to Upgrade";
+            }
+            else
+            {
+                panelText.text = $"Farm Stats \n Growth: {farmStat.upgradeMinGrowthSpeed[currentUpgrade - 1]}x - " +
+                    $"{farmStat.upgradeMaxGrowthSpeed[currentUpgrade - 1]}x \n" +
+                    $"Yield: {farmStat.upgradeMinYield[currentUpgrade - 1]} - {farmStat.upgradeMaxYield[currentUpgrade - 1]} \n\n" +
+                    $"Max Upgrade";
             }
         }
 

@@ -115,7 +115,7 @@ public class FeralityManager : MonoBehaviour
 
     public void AdjustFeralityMultiplier(float amount)
     {
-        feralityMultiplier += amount;
+        feralityMultiplier += amount;   
     }
 
     private void OnDrawGizmosSelected()

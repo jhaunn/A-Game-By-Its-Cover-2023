@@ -72,6 +72,7 @@ public class GameMenu : MonoBehaviour
             tutorial.SetActive(false);
 
             GameObject.FindGameObjectWithTag("Player").SetActive(false);
+            GameObject.FindObjectOfType<Timer>().StopTimer();
 
             SoundManager.instance.GetComponent<AudioSource>().clip = gameOverMusic;
             SoundManager.instance.GetComponent<AudioSource>().Play();
