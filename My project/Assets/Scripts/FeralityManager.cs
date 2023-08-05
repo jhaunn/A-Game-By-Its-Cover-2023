@@ -101,6 +101,18 @@ public class FeralityManager : MonoBehaviour
         }
     }
 
+    public void AddFerality(float amount)
+    {
+        slider.value += amount;
+        slider.gameObject.GetComponentInParent<Animator>().Play("Pulse");
+    }
+
+    public void removeFerality(float amount)
+    {
+        slider.value -= amount;
+        slider.gameObject.GetComponentInParent<Animator>().Play("Pulse");
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, interactRadius);

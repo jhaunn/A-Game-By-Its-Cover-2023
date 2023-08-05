@@ -45,5 +45,6 @@ public class ScoreManager : MonoBehaviour
     public void RemoveResource(int value)
     {
         resource -= value;
+        resourceText.gameObject.GetComponentInParent<Animator>().Play("Pulse");
     }
 }

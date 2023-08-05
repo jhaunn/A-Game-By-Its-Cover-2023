@@ -31,10 +31,10 @@ public class VillageNpc : MonoBehaviour
 
         if (currentWaitTime <= 0f)
         {
-            canInteract = false;
-            GetComponentInChildren<TextMeshPro>().text = "...";
-            soundFx.PlayOneShot(SoundManager.instance.sounds[3]);
-            Invoke("Remove", 2f);
+            if (canInteract)
+            {
+                Ignored();
+            }
         }
 
         if (Physics2D.OverlapCircle(transform.position, interactRadius, playerLayerMask))
@@ -50,9 +50,7 @@ public class VillageNpc : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) && canInteract)
             {
-                canInteract = false;
-                soundFx.PlayOneShot(SoundManager.instance.sounds[4]);
-                Invoke("Remove", 2f);
+                Interact();
             }
 
         }
@@ -69,9 +67,57 @@ public class VillageNpc : MonoBehaviour
         }
     }
 
+    private void Interact()
+    {
+        canInteract = false;
+        soundFx.PlayOneShot(SoundManager.instance.sounds[4]);
+
+        float random = Random.Range(0f, 100f);
+
+        int[] amount = { 1, 1, 1, 1, 1, 5, 5, 5, 5, 5, 10, 10, 10, 10, 10, 15, 15, 15, 25, 25, 50, 100 };
+        int index = Random.Range(0, amount.Length);
+
+        if (random <= 75f)
+        {
+            ScoreManager.instance.AddResource(amount[index]);
+        }
+        else
+        {
+            FeralityManager.instance.AddFerality(amount[index]);
+        }
+
+        Invoke("Remove", 2f);
+    }
+
+    private void Ignored()
+    {
+        canInteract = false;
+        GetComponentInChildren<TextMeshPro>().text = "...";
+        soundFx.PlayOneShot(SoundManager.instance.sounds[3]);
+
+        float random = Random.Range(0f, 100f);
+
+        int[] amount = { 5, 5, 5, 5, 5, 10, 10, 10, 10, 10, 25, 25, 25, 25, 25, 50, 100 };
+        int index = Random.Range(0, amount.Length);
+
+        if (random <= 75f)
+        {
+            FeralityManager.instance.removeFerality(amount[index]);
+        }
+        else
+        {
+            ScoreManager.instance.RemoveResource(amount[index]);
+        }
+
+        Invoke("Remove", 2f);
+
+        Invoke("Remove", 2f);
+    }
+
     private void Remove()
     {
         Instantiate(EffectsManager.instance.particles[2], transform.position, EffectsManager.instance.particles[2].transform.rotation);
+
         gameObject.SetActive(false);
     }
 }

@@ -4844,10 +4844,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcf82f848e06fa47ace67879c7cd80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xBound: 17
+  xBound: 16.5
   yBound: 2
-  spawnTimerMin: 10
-  spawnTimerMax: 20
+  spawnTimerMin: 5
+  spawnTimerMax: 10
   npc: {fileID: 3212331732424399862, guid: b598649c41abf2b4e9f6358f3bb6e5f4, type: 3}
 --- !u!4 &359868828
 Transform:
@@ -4862,7 +4862,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376086185
 GameObject:
@@ -34415,37 +34415,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &653601549
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 653601550}
-  m_Layer: 0
-  m_Name: Randomizer Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &653601550
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653601549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &681615370
 GameObject:
