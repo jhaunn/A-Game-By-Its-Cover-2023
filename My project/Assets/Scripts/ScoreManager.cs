@@ -8,7 +8,6 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
 
     [SerializeField] private TextMeshProUGUI resourceText;
-
     private int resource;
 
     private void Awake()

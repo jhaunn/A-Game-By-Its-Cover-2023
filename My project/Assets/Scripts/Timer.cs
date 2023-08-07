@@ -10,9 +10,16 @@ public class Timer : MonoBehaviour
     private float currentSec = 0f;
     private bool isRunning = true;
 
+    [SerializeField] private TextMeshPro highScore;
+
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
+    }
+
+    private void Start()
+    {
+        highScore.text = $"High Score\n{PlayerPrefs.GetInt("highScoreMin",0)}:{PlayerPrefs.GetInt("highScoreSec",0).ToString("00")}";
     }
 
     private void Update()
@@ -29,11 +36,14 @@ public class Timer : MonoBehaviour
             FeralityManager.instance.AdjustFeralityMultiplier(0.75f);
         }
 
-        text.text = $"{currentMin.ToString("0")}:{currentSec.ToString("00")}";
+        text.text = $"{currentMin}:{currentSec.ToString("00")}";
     }
 
     public void StopTimer()
     {
         isRunning = false;
+
+        PlayerPrefs.SetInt("highScoreMin", currentMin);
+        PlayerPrefs.SetInt("highScoreSec", Mathf.FloorToInt(currentSec));
     }
 }
